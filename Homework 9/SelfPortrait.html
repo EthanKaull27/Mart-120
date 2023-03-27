@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>
+            First p5.js page
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+        <script>
+function setup() {
+    createCanvas(600, 600);
+  }
+  
+  function draw() {
+    background(120,45,78);
+    textSize(50)
+    text("Hello!",150,80);
+    
+    //head
+    fill(121, 85, 72);
+    circle(300,400,300);
+    
+    //eyes
+    strokeWeight(20);
+    fill(0);
+    point(247, 350);
+    point(347,350);
+    
+    //nose
+    point(300,400);
+    
+    //mouth
+    line(250,450,350,450);
+    line(300,500,350,450);
+    line(250,450,300,500);
+    
+    //hair
+    line(225,275,225,325);
+    line(300,250,300,300);
+    line(375,275,375,325);
+    
+    //body
+    fill(251, 140, 0);
+    rect(250,550,100,60);
+    
+    //arm
+    rect(190,575,50,10);
+    
+    //arm
+    rect(370,575,50,10);
+    
+    fill(120);
+    textSize(22);
+    text("Ethan Kaull", 400,550);
+  }
+  </script>
+  </html>
