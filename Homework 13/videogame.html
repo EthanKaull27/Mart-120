@@ -1,0 +1,156 @@
+<html>
+    <title>
+        Video Game!
+    </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+<script>
+  
+var characterX = 10;
+var characterY = 10;
+var w = 87; 
+var s = 83;
+var a = 65;
+var d = 68;
+var shapeX = 30;
+var shapeY = 50;
+var shapeXSpeed;
+var shapeYSpeed;
+var mouseShapeX;
+var mouseShapeY;
+var strokeFill = 0;
+var backgroundRed = 0;
+var backgroundGreen = 171;
+var backgroundBlue = 169;
+
+function backgroundProperties()
+{
+    background(backgroundRed,backgroundGreen,backgroundBlue);
+    stroke(strokeFill);
+    fill(strokeFill);
+}
+function setup()
+{
+    createCanvas(300, 400);
+   
+    shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * 5)) + 1);
+    createCharacter(200,350);
+}
+
+function draw()
+{
+   backgroundProperties();
+    createBorders(5);
+    function createBorders(thickness)
+{
+    rect(0,0,width,thickness);
+    rect(0,0,thickness,height);
+    rect(0, height-thickness,width, thickness);
+    rect(width-thickness,0,thickness,height-50);
+}
+
+    
+    textSize(10);
+    text("FREEDOM!", width-60,height-50)
+
+    
+    drawCharacter();
+    characterMovement();
+    function characterMovement()
+{
+    
+    if(keyIsDown(w))
+    {
+        characterY -= 10;   
+    }
+    if(keyIsDown(s))
+    {
+        characterY += 10;   
+    }
+    if(keyIsDown(a))
+    {
+        characterX -= 10;   
+        console.log("movement: " + characterX);
+    }
+    if(keyIsDown(d))
+    {
+        characterX += 10;   
+    }
+}
+
+    
+    fill(229,20,0);
+    
+    circle(shapeX, shapeY, 10);
+
+     
+     shapeXSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * -10)) + 1);
+     shapeYSpeed = Math.floor(Math.random() * (Math.floor(Math.random() * -10)) + 1);
+
+    
+    shapeX += shapeXSpeed;
+    shapeY += shapeYSpeed;
+enemyrelocate(2);
+    function enemyrelocate()
+{
+    if(shapeX > width)
+    {
+        shapeX = 0;
+    }
+    if(shapeX < 0)
+    {
+        shapeX = width;
+    }
+    if(shapeY > height)
+    {
+        shapeY = 0;
+    }
+    if(shapeY < 0)
+    {
+        shapeY = height;
+    }
+}
+function exitMessage()
+{
+    fill(0);
+        stroke(5);
+        textSize(26);
+        text("You Escaped!", width/2-20, height/2-20);
+}
+exit();
+    function exit()
+    {
+    if(characterX > width && characterY > width-50)
+    {
+        exitMessage();
+    }
+    }
+function enemy()
+{
+    fill(109,135,100);
+    circle(mouseShapeX, mouseShapeY, 30);
+}
+}
+
+function createCharacter(x,y)
+{
+    characterX = x;
+    characterY = y;
+    console.log(characterX);
+
+}
+
+function drawCharacter()
+{
+    fill(96,169,23);
+    circle(characterX,characterY,25);
+}
+mouseClicked();
+function mouseClicked()
+{
+    mouseShapeX = mouseX;
+    mouseShapeY = mouseY;
+}
+
+</script>
+</html>
