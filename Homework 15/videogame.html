@@ -3,7 +3,6 @@
         Video Game!
     </title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-    <script src="js/rectangle.js"></script>
 <script>
   
 var characterX = 10;
@@ -23,7 +22,6 @@ var strokeFill = 0;
 var backgroundRed = 0;
 var backgroundGreen = 171;
 var backgroundBlue = 169;
-var rectangleObject;
 
 function backgroundProperties()
 {
@@ -43,32 +41,10 @@ function setup()
         }
     
         createCharacter(200, 350);
-
-        class Rectangle
-{
-    constructor(x,y,w,h,r,g,b)
-    {
-        this.x = x;
-        this.y = y;
-        this.w = w;
-        this.h = h;
-        this.r = r;
-        this.g = g;
-        this.b = b;
-    }
-
-    draw()
-    {
-        fill(this.r, this.g, this.b);
-        rect(this.x, this.y, this.w, this.h);
-    }
-}
-rectangleObject = new Rectangle(100, 200, 10, 50, 120, 35, 210);
 }
 
 function draw()
 {
-    rectangleObject.display();
    backgroundProperties();
     createBorders(5);
     function createBorders(thickness)
