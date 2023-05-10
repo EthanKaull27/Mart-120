@@ -1,0 +1,126 @@
+<html>
+    <head>
+        <title>
+            First p5.js page
+        </title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+        <script>
+//Title Sizes
+var size = 50;
+var count = 0;
+var sizeDirection = 2;
+
+//Background Color Variables
+var redColor = 120;
+var greenColor = 45;
+var blueColor = 78;
+
+//Eye Variables
+var xleftEye = 247;
+var yleftEye = 350;
+var xrightEye = 347;
+var yrightEye = 350;
+
+//Head Variables
+var headX = 300;
+var headY = 400;
+var headDiameter = 300;
+
+//Nose Variables
+var noseX = 300;
+var noseY = 400;
+
+//Arm Variables
+var firstPointX = 190;
+var firstPointY = 575;
+var secondPointX = 50;
+var secondPointY = 10;
+
+//Movement Speeds
+var movement = 5;
+var headMovement = 13
+var rightEyeMovement = 2;
+var noseMovement = 7;
+var armMovement = 10;
+
+function setup() 
+{
+    createCanvas(600, 600);
+  }
+  
+  function draw() 
+  {
+    background(redColor,greenColor,blueColor);
+
+    textSize(size);
+    size+= sizeDirection;
+    count++;
+    if(count >30)
+    {
+      sizeDirection *=-1;
+      count = 0;
+    }
+    text("Hello!",150,80);
+    
+    //head
+    fill(121, 85, 72);
+    circle(headX,headY,headDiameter);
+    if(headX <= 0 || headX >= 600)
+    {
+      headMovement*=-1;
+    }
+    headX+= headMovement;
+    
+    //eyes
+    strokeWeight(20);
+    fill(0);
+    point(xleftEye, yleftEye);
+    if(xleftEye <= 0 || xleftEye >= 600)
+    {
+      movement*=-1;
+    }
+    xleftEye+= movement;
+    point(xrightEye,yrightEye)
+    if(yrightEye >=575 || yrightEye <= 25)
+    {
+      rightEyeMovement*=-1;
+    }
+    yrightEye+= rightEyeMovement;
+
+    //nose
+    point(noseX,noseY);
+    if (noseX <= 0 || noseX >= 575)
+    {
+      noseMovement*=-1;
+    }
+    noseX+=noseMovement;
+    //mouth
+    line(250,450,350,450);
+    line(300,500,350,450);
+    line(250,450,300,500);
+    
+    //hair
+    line(225,275,225,325);
+    line(300,250,300,300);
+    line(375,275,375,325);
+    
+    //body
+    fill(251, 140, 0);
+    rect(250,550,100,60);
+    
+    //arm
+    rect(firstPointX,firstPointY,secondPointX,secondPointY);
+    if (firstPointY <=0 || firstPointY >= 575)
+    {
+      armMovement*=-1;
+    }
+    firstPointY+=armMovement
+    //arm
+    rect(370,575,50,10);
+    
+    fill(120);
+    textSize(22);
+    text("Ethan Kaull", 400,550);
+  }
+  </script>
+  </html>

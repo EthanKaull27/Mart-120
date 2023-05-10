@@ -1,0 +1,72 @@
+<html>
+    <title>Contact Us</title>
+    <head>
+        <style>
+            span
+            {
+            background-color:
+            purple;
+            }
+        </style>
+        <script>
+             function printQuestion()
+            {
+                document.getElementById("theQuestion").innerHTML = "Please Fill Out The Information"; 
+            }
+        function checkAnswer()
+        {
+            var answer = document.getElementById("lastName").value;
+            var answer = document.getElementById("firstName").value;
+            var answer = document.getElementById("email").value;
+            if(answer == "")
+            {
+                document.getElementById("finalResult").innerHTML = "Please Fill In Required Fields";
+            }
+            else{
+                document.getElementById("finalResult").innerHTML = "Thank You!";
+            }
+        }
+        </script>
+    </head>
+    <body onload="printQuestion();">
+        <div id="theQuestion"></div>
+        <table>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" id="firstName"></td>
+            </tr>
+        </table>
+    <body onLoad="printQuestion();">
+        <div id="theQuestion"></div>
+        <table>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" id="lastName"></td>
+            </tr>
+        </table>
+        <div id="finalResult"></div>
+        
+    </body>
+    <body onLoad="printQuestion();">
+        <div id="theQuestion"></div>
+        <table>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" id="email"></td>
+            </tr>
+        </table>
+            Accept Terms Of Agreement:<button id="Accept" type="Accept">Accept</button><button id="Deny" type="Deny">Deny</button><br>
+            <tr>
+                <td colspan="2"><button id="btnSubmit" onClick="checkAnswer();">Submit</button></td>
+            </tr>
+        <div id="finalResult"></div>
+            <br>
+            All areas with "*" are required.
+            <br>
+            <a href="HomePage.html" style="text-decoration:none" target="_blank">My Home Page</a><br>
+            <a href="SecondPage.html" style="text-decoration:none" target="_blank">My Second Page</a>
+            <br>
+    <a href="Portfolio.html" style="text-decoration:none" target="_blank">Portfolio Page</a>
+        
+        </form>
+</html>
